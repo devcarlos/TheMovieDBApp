@@ -14,8 +14,14 @@ class MovieCell: UICollectionViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
 
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        setupUI()
+    }
+
     func setupUI() {
-        posterImage.setupRoundedCorners(radius: 10)
+        posterImage.setupRoundedCorners(radius: 12)
+        posterImage.setupBorder(color: .darkGray)
     }
 
     public func configure(with movie: Movie) {

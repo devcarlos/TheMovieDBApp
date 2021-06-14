@@ -6,7 +6,6 @@
 //  Copyright © 2021 TheMovieApp. All rights reserved.
 //
 
-import Security
 import UIKit
 
 class HomeViewController: UIViewController {
@@ -23,11 +22,6 @@ class HomeViewController: UIViewController {
 
         setupUI()
         loadData()
-    }
-
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-
     }
 
     // MARK: - Functions
@@ -55,7 +49,6 @@ class HomeViewController: UIViewController {
             switch result {
             case .success:
                 self.refreshUI()
-                print("MOVIES \(self.viewModel.movies)")
             case .failure(let error):
                 print(error.localizedDescription)
                 self.showAlert(title: "Error", message: error.localizedDescription)
@@ -64,11 +57,10 @@ class HomeViewController: UIViewController {
     }
 
     func showMoviewDetail(movie: Movie) {
-
-//        let vc = MovieDetailsViewController.controllerFromOwnStoryboard(withName: "MovieDetails") as MovieDetailsViewController
-//        vc.modalPresentationStyle = .fullScreen
-//        vc.viewModel.movie = movie
-//        present(vc, animated: true, completion: nil)
+        let vc = MovieDetailsViewController.controllerFromOwnStoryboard(withName: "MovieDetails") as MovieDetailsViewController
+        vc.modalPresentationStyle = .fullScreen
+        vc.viewModel.movie = movie
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
 
