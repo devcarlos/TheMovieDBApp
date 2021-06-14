@@ -35,7 +35,18 @@ class HomeViewController: UIViewController {
         let layout = UICollectionViewFlowLayout()
         layout.minimumLineSpacing = 20
         layout.minimumInteritemSpacing = 10
-        layout.itemSize = CGSize(width: (self.view.frame.width - 32 - 20) / 3, height: 220)
+
+        var columns: CGFloat = 3
+        var offset: CGFloat = 32 + 30
+        let height: CGFloat = 220
+        var width: CGFloat = (self.view.frame.width - offset) / columns
+        if UIApplication.shared.windows.first?.windowScene?.interfaceOrientation.isLandscape ?? true {
+            columns = 6
+            offset = 200
+            width = (self.view.frame.width - offset) / columns
+        }
+
+        layout.itemSize = CGSize(width: width, height: height)
         layout.sectionInset = UIEdgeInsets(top: 16, left: 16, bottom: 20, right: 16)
         collectionView.collectionViewLayout = layout
     }
