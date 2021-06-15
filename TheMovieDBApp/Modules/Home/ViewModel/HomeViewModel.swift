@@ -24,6 +24,12 @@ class HomeViewModel: NSObject {
     var currentMovieData: MovieData?
     var movies: [Movie] = []
     var paginate = Paginate()
+
+    var service: ServiceProtocol?
+
+    init(service: ServiceProtocol? = MovieService()) {
+        self.service = service
+    }
 }
 
 extension HomeViewModel {
@@ -37,7 +43,7 @@ extension HomeViewModel {
         params["language"] = "en-US"
         params["api_key"] = Constants.API_KEY
 
-        MovieService().GETRequest(params) { (response: Response<MovieData>) in
+        service?.GETRequest(params) { (response: Response<MovieData>) in
             switch response {
             case .success(let data):
 

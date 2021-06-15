@@ -10,13 +10,10 @@ def shared_pods
     pod 'SwiftLint'
 end
 
-# Pods for testing
-def testing_pods
-end
-
 target 'TheMovieDBApp' do
     shared_pods
 end
 
 target 'TheMovieDBAppTests' do
+    shared_pods
 end

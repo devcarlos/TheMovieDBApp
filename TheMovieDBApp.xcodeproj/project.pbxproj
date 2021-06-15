@@ -30,6 +30,15 @@
 		567C99D8267846E200D078F8 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567C99D7267846E200D078F8 /* Coordinator.swift */; };
 		567C99DD2678470000D078F8 /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567C99DC2678470000D078F8 /* Storyboarded.swift */; };
 		567C99E22678494C00D078F8 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567C99E12678494C00D078F8 /* MainCoordinator.swift */; };
+		567C99E72678559D00D078F8 /* HomeViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567C99E62678559D00D078F8 /* HomeViewModelTests.swift */; };
+		567C99EB267855D400D078F8 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5698B3602676621D00F66625 /* HomeViewModel.swift */; };
+		567C99EF2678562600D078F8 /* MovieService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567AB7F12676596C006E44D6 /* MovieService.swift */; };
+		567C99F3267856B300D078F8 /* ServiceBaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567AB7EC2676596C006E44D6 /* ServiceBaseProtocol.swift */; };
+		567C99F7267857DA00D078F8 /* ServiceBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567AB7EE2676596C006E44D6 /* ServiceBase.swift */; };
+		567C99FB267857E100D078F8 /* MovieData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5698B3622676621D00F66625 /* MovieData.swift */; };
+		567C99FF267857E500D078F8 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5698B372267662D300F66625 /* Movie.swift */; };
+		567C9A03267857F700D078F8 /* ErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567AB7ED2676596C006E44D6 /* ErrorResponse.swift */; };
+		567C9A072678580300D078F8 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567AB81826765D8D006E44D6 /* Constants.swift */; };
 		5698B3682676621D00F66625 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5698B3602676621D00F66625 /* HomeViewModel.swift */; };
 		5698B3692676621D00F66625 /* MovieData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5698B3622676621D00F66625 /* MovieData.swift */; };
 		5698B36A2676621D00F66625 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5698B3652676621D00F66625 /* Home.storyboard */; };
@@ -94,6 +103,7 @@
 		567C99D7267846E200D078F8 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		567C99DC2678470000D078F8 /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
 		567C99E12678494C00D078F8 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		567C99E62678559D00D078F8 /* HomeViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelTests.swift; sourceTree = "<group>"; };
 		5698B3602676621D00F66625 /* HomeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		5698B3622676621D00F66625 /* MovieData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieData.swift; sourceTree = "<group>"; };
 		5698B3652676621D00F66625 /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
@@ -177,6 +187,7 @@
 			isa = PBXGroup;
 			children = (
 				567AB7B826754B9D006E44D6 /* TheMovieDBAppTests.swift */,
+				567C99E62678559D00D078F8 /* HomeViewModelTests.swift */,
 				567AB7BA26754B9D006E44D6 /* Info.plist */,
 			);
 			path = TheMovieDBAppTests;
@@ -449,6 +460,7 @@
 				567AB7B026754B9D006E44D6 /* Sources */,
 				567AB7B126754B9D006E44D6 /* Frameworks */,
 				567AB7B226754B9D006E44D6 /* Resources */,
+				2C6E4840A732D17250292221 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -574,6 +586,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		2C6E4840A732D17250292221 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TheMovieDBAppTests/Pods-TheMovieDBAppTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TheMovieDBAppTests/Pods-TheMovieDBAppTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TheMovieDBAppTests/Pods-TheMovieDBAppTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		64DAE3F8564FBFAEF6A342A6 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -652,6 +681,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				567AB7B926754B9D006E44D6 /* TheMovieDBAppTests.swift in Sources */,
+				567C99EB267855D400D078F8 /* HomeViewModel.swift in Sources */,
+				567C99F7267857DA00D078F8 /* ServiceBase.swift in Sources */,
+				567C99FB267857E100D078F8 /* MovieData.swift in Sources */,
+				567C99F3267856B300D078F8 /* ServiceBaseProtocol.swift in Sources */,
+				567C9A072678580300D078F8 /* Constants.swift in Sources */,
+				567C99EF2678562600D078F8 /* MovieService.swift in Sources */,
+				567C9A03267857F700D078F8 /* ErrorResponse.swift in Sources */,
+				567C99FF267857E500D078F8 /* Movie.swift in Sources */,
+				567C99E72678559D00D078F8 /* HomeViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

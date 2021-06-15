@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol ServiceProtocol {
+protocol ServiceProtocol: AnyObject {
     func GETRequest<T: Codable>(_ parameters: [String: String], completionBlock: @escaping(Response<T>)->Void)
 }
 
