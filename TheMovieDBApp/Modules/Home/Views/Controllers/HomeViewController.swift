@@ -14,6 +14,8 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
 
     // MARK: - Variables
+    weak var coordinator: MainCoordinator?
+
     let viewModel = HomeViewModel()
 
     // MARK: - VC LifeCycle
@@ -67,19 +69,19 @@ class HomeViewController: UIViewController {
         })
     }
 
-    func showMoviewDetail(movie: Movie) {
-        let vc = MovieDetailsViewController.controllerFromOwnStoryboard(withName: "MovieDetails") as MovieDetailsViewController
-        vc.modalPresentationStyle = .fullScreen
-        vc.viewModel.movie = movie
-        self.navigationController?.pushViewController(vc, animated: true)
-    }
+//    func showMoviewDetail(movie: Movie) {
+//        let vc = MovieDetailsViewController.instantiate(withName: "MovieDetails") as MovieDetailsViewController
+//        vc.modalPresentationStyle = .fullScreen
+//        vc.viewModel.movie = movie
+//        self.navigationController?.pushViewController(vc, animated: true)
+//    }
 }
 
 //MARK: - UICollectionViewDelegate
 extension HomeViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let movie = viewModel.movies[indexPath.row]
-        showMoviewDetail(movie: movie)
+        coordinator?.showMoviewDetail(movie: movie)
     }
 }
 

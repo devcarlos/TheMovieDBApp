@@ -9,13 +9,13 @@
 import Foundation
 
 protocol ServiceProtocol {
-    func GETRequest<T: Codable>(_ parameters: [String: String], completionBlock: @escaping(Response<T>)->())
+    func GETRequest<T: Codable>(_ parameters: [String: String], completionBlock: @escaping(Response<T>)->Void)
 }
 
 final class MovieService {
     private var serviceBase: ServiceBaseProtocol
     private var endPointName = "MoviesEndpoint"
-    
+
     init(serviceBase: ServiceBaseProtocol = ServiceBase.sharedInstance()) {
         self.serviceBase = serviceBase
     }
@@ -32,7 +32,7 @@ private extension MovieService {
 }
 
 extension MovieService: ServiceProtocol {
-    func GETRequest<T: Codable>(_ parameters: [String: String], completionBlock: @escaping (Response<T>) -> ()) {
+    func GETRequest<T: Codable>(_ parameters: [String: String], completionBlock: @escaping (Response<T>) -> Void) {
         let endPoint = getEndPoint()
         self.serviceBase.GETRequest(endPoint, parameters: parameters, completionBlock: completionBlock)
     }

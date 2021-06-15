@@ -20,6 +20,8 @@ class MovieDetailsViewController: UIViewController {
     // MARK: - Variables
     let viewModel = MovieDetailsViewModel()
 
+    weak var coordinator: MainCoordinator?
+
     // MARK: - VC LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,8 +36,7 @@ class MovieDetailsViewController: UIViewController {
 
         posterImage.setupRoundedCorners(radius: 12)
         posterImage.setupBorder(color: .darkGray)
-        self.navigationController?.navigationBar.tintColor = .white
-        self.title = "Movie Details"
+        title = "Movie Details"
     }
 
     func loadData() {

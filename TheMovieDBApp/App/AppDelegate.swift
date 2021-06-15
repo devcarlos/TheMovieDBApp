@@ -3,6 +3,7 @@
 //  TheMovieDBApp
 //
 //  Created by Carlos Alcala on 6/12/21.
+//  Copyright © 2021 TheMovieDBApp. All rights reserved.
 //
 
 import UIKit
@@ -10,10 +11,10 @@ import UIKit
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+
+        setupUI()
+
         return true
     }
 
@@ -29,5 +30,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the user discards a scene session.
         // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
+    }
+
+    func setupUI() {
+        UINavigationBar.appearance().barTintColor = .black
+        UINavigationBar.appearance().tintColor = .white
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        UINavigationBar.appearance().isTranslucent = false
     }
 }

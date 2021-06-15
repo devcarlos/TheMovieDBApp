@@ -9,18 +9,6 @@
 import UIKit
 
 extension UIViewController {
-    static func controllerFromOwnStoryboard<T: UIViewController>(withName storyboardName: String? = nil) -> T {
-        let controllerName = String(describing: self)
-        let storyboard = UIStoryboard(name: storyboardName ?? controllerName, bundle: nil)
-        if let controller = storyboard.instantiateViewController(withIdentifier: controllerName) as? T {
-            return controller
-        }
-        else if let controller = storyboard.instantiateInitialViewController() as? T {
-            return controller
-        }
-        fatalError("Could not find storyboard with name \(storyboardName ?? controllerName)")
-    }
-
     func showAlert(title: String, message: String) {
         let alert = UIAlertController(title: title,
                                       message: message,
